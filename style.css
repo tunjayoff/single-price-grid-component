@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+:root {
+	--ffamily: "Karla", sans-serif;
+	--fweight400: 400;
+	--fweight700: 700;
+
+	--bgcolor-body: hsl(204, 43%, 93%);
+	--bgcolor-button: hsl(71, 73%, 54%);
+	--bgcolor-monthlysub: hsl(179, 62%, 43%);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-width: 100%;
+	min-height: 100vh;
+	background-color: var(--bgcolor-body);
+	font-family: var(--ffamily);
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr;
+	max-width: 40%;
+	max-height: min-content;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 20px 0px;
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	grid-column: 1 / span 2;
+	padding: 30px 35px;
+	text-align: left;
+
+	background-color: white;
+	gap: 15px;
+}
+
+header > h1 {
+	color: var(--bgcolor-monthlysub);
+	font-size: 24px;
+	margin-bottom: 5px;
+}
+
+header > p:nth-child(2) {
+	color: var(--bgcolor-button);
+	font-weight: var(--fweight700);
+}
+
+header > p:last-child {
+	color: var(--bgcolor-monthlysub);
+}
+
+section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	row-gap: 10%;
+	padding: 30px 35px;
+}
+
+.sub-page {
+	background-color: var(--bgcolor-monthlysub);
+	color: white;
+}
+
+.sub-page > p:nth-child(2) {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 32px;
+	color: var(--bgcolor-body);
+	font-weight: var(--fweight700);
+}
+
+.sub-page > p > span {
+	font-size: 16px;
+	font-weight: var(--fweight400);
+}
+
+.sub-page > button {
+	border-style: none;
+	max-width: 100%;
+	min-height: 40px;
+	border-radius: 5px;
+	margin: 3% 0;
+	background-color: var(--bgcolor-button);
+	color: white;
+	font-weight: var(--fweight700);
+	font-family: var(--ffamily);
+	box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 20px 0px;
+}
+
+.sub-page > button:hover {
+	cursor: pointer;
+	mix-blend-mode: luminosity;
+}
+
+.why-us {
+	background-color: var(--bgcolor-monthlysub);
+	opacity: 0.8;
+	color: white;
+}
+
+.why-us > ul {
+	list-style: none;
+	color: var(--bgcolor-body);
+	font-weight: var(--fweight400);
+	font-size: 14px;
+	padding-bottom: 10px;
+}
+
+@media screen and (max-width: 900px) {
+	main {
+		grid-template-rows: 1fr 2fr;
+		max-width: 330px;
+		margin: 30px 20px;
+	}
+	section {
+		grid-template-columns: 1fr;
+	}
+
+	.card {
+		row-gap: 2px;
+		justify-content: space-evenly;
+	}
+
+	.why-us li {
+		margin-top: 5px;
+	}
+}
